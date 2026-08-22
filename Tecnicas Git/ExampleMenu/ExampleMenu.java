@@ -1,15 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
-package com.juanfedevmaster.examplemenu;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
-/**
- *
- * @author juanfe
- */
 public class ExampleMenu {
 
     public static void main(String[] args) {
