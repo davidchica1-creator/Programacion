@@ -5,17 +5,13 @@ class ColaCircular:
         self.vector = [None] * capacidad
         self.primero = 0
         self.final = -1
+        self.cantidad = 0
 
     def ColaLlena(self):
-
-        if self.primero == (self.final + 1) % self.capacidad:
-            return True
-        return False
+        return self.cantidad == self.capacidad
 
     def ColaVacia(self):
-        if self.final == -1:
-            return True
-        return False
+        return self.cantidad == 0
 
     def EncolarColaCircular(self, valor):
 
@@ -23,12 +19,9 @@ class ColaCircular:
             print("Cola Circular está llena")
             return
         
-        elif self.ColaVacia():
-
-            self.final = 0
-            
         self.final = (self.final + 1) % self.capacidad
         self.vector[self.final] = valor
+        self.cantidad += 1
 
     def DesencolarColaCircular(self):
 
@@ -40,27 +33,27 @@ class ColaCircular:
         valor_eliminar = self.vector[self.primero]
 
         if self.primero == self.final:
-            print("Cola Circular está vacía")
             self.primero = 0
             self.final = -1
 
         else:
-
             self.primero = (self.primero + 1) % self.capacidad
 
-            return valor_eliminar
+        self.cantidad -= 1
+        return valor_eliminar
 
-    def Mostrar(self):
+    def MostrarColaCircular(self):
 
         if self.ColaVacia():
             print("Cola Circular está vacía")
 
         else:
-
             elementos = []
+            i = self.primero
 
-            for elementos in self.vector:
-                elementos.append(elementos)
+            for _ in range(self.cantidad):
+                elementos.append(self.vector[i])
+                i = (i + 1) % self.capacidad
 
             print(elementos)
 
