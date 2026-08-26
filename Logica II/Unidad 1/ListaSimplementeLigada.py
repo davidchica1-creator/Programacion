@@ -19,7 +19,7 @@ class ListaSimplementeLigada:
 
     def imprimir(self)-> None:
         if self.cabecera is None:
-            print("La Lista Simplemene Ligada está vacia")
+            print("La Lista Simplemente Ligada está vacia")
         else:
             nodo_actual = self.cabecera
             while nodo_actual is not None:
